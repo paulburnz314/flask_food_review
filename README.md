@@ -26,24 +26,26 @@ flask_food_review/
   run.py  # the file invoked by flask run, be sure to 'Set FLASK_APP=run.py' (Set is for windows)
   app/  
     __init__.py
-# dunder init - initializes, executes and defines the app package and brings together all of the various components
     config.py
-# configs baby
     routes.py
-# where the routes are defined, routes are the different URLs that the application implements
     models.py
-# where the models are defined, i.e., tables, fields and relationships
     forms.py
-# where the forms are defined. The Flask-WTF extension uses Python classes
-# to represent web forms. A form class simply defines the fields of the
-# form as class variables
-   static/
-# styling sheets and javascript
-  templates/
-# where the Jinja2 templates which are html files with jinja2 notations,
-# i.e., {% block head %} {% endblock %} (percent braces and double braces)
-  
+    static/
+    templates/
+      index.html
+      
+dunder init - initializes, executes and defines the app package and brings together all of the various components
 
+config.py - configs baby
 
+routes.py - where the routes are defined, routes are the different URLs that the application implements
 
+models.py - where the models are defined, i.e., tables, fields and relationships
+
+forms.py - where the forms are defined. The Flask-WTF extension uses Python classes to represent web forms. A form class simply defines the 
+fields of the form as class variables
+   
+static/ - styling sheets and javascript
+
+templates/ - where the Jinja2 templates which are html files with jinja2 notations, i.e., {% block head %} {% endblock %} (percent braces and double braces)
 

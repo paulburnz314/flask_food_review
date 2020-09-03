@@ -1,8 +1,8 @@
-"""3 tables added
+"""sorted relationships
 
-Revision ID: c74e6b07d92f
+Revision ID: 4308c0463218
 Revises: 
-Create Date: 2020-09-01 11:34:41.481655
+Create Date: 2020-09-03 15:00:57.139145
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = 'c74e6b07d92f'
+revision = '4308c0463218'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -34,9 +34,7 @@ def upgrade():
     sa.Column('password_hash', sa.String(length=128), nullable=True),
     sa.Column('aboutme', sa.String(length=140), nullable=True),
     sa.Column('lastseen', sa.DateTime(), nullable=True),
-    sa.Column('foodservice_id', sa.Integer(), nullable=False),
-    sa.ForeignKeyConstraint(['foodservice_id'], ['foodservice.id'], ),
-    sa.PrimaryKeyConstraint('id', 'foodservice_id')
+    sa.PrimaryKeyConstraint('id')
     )
     op.create_index(op.f('ix_user_email'), 'user', ['email'], unique=True)
     op.create_index(op.f('ix_user_username'), 'user', ['username'], unique=True)
